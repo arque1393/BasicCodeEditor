@@ -9,7 +9,7 @@ For First time you have to clone the repo and call the envSetup.sh scripts in gi
 copy this code and run in bash 
 ```
 git clone https://github.com/arque1393/BasicCodeEditor.git
-cd BasicCodeEdito
+cd BasicCodeEditor
 ./envSetup.sh 
 ```
 This code will setup the environment 
@@ -18,7 +18,7 @@ you can imagine this code will install this app
 ##### Run App
 go to " BasicCodeEdito" directory and run the run.sh scripts.
 ```
-cd BasicCodeEdito
+cd BasicCodeEditor
 ./run.sh 
 ```
 
