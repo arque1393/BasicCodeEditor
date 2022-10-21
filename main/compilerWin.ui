@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>compilerWin</class>
+ <widget class="QMainWindow" name="compilerWin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1019</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+	background-color:rgb(220,220, 255);
+	color:black;
+}
+
+QMainWindow{
+	background-color:rgb(50, 0, 90);
+}
+QTabWidget{
+	background-color:rgb(85, 0, 127);
+	color:rgb(255, 255, 255)
+}
+QMenuBar{
+	background-color:rgb(50, 0, 90);
+	color:white;
+	font-weight:bold;
+}
+
+/**/
+QMenuBar::item {
+			padding:2px 7%;
+           
+ }
+
+ QMenuBar::item::selected {
+ background-color: rgb(50,30,100);
+}
+
+QMenu {
+	background-color: rgb(120, 40, 160);
+	color: rgb(255,255,255);
+	border: 1px solid #000;           
+}
+
+QMenu::item::selected {
+	 background-color: rgb(10,20,100);
+ }
+/***/
+
+
+
+
+
+
+
+
+QLabel{
+	background-color:rgb(50, 0, 90);
+	color:white;
+	padding:2%;
+}
+QStatusBar{
+	background-color:rgb(85, 0, 127);
+
+}
+/*
+QTabWidget QWidget {
+	background-color:rgb(240,240 , 255);
+
+}*/
+
+QTabBar  {
+ 	background-color:rgb(70, 40, 130);
+	color:white;
+	padding:0;
+}
+
+QTabBar::tab:selected {
+    background :rgb(55, 0, 110);
+}
+
+QPlainTextEdit{
+	background-color:rgb(240,240 , 255);
+}
+</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <underline>false</underline>
+          <strikeout>false</strikeout>
+          <kerning>false</kerning>
+         </font>
+        </property>
+        <property name="whatsThis">
+         <string/>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="locale">
+         <locale language="Erzya" country="Russia"/>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhNone</set>
+        </property>
+        <property name="tabShape">
+         <enum>QTabWidget::Rounded</enum>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <property name="tabsClosable">
+         <bool>true</bool>
+        </property>
+        <property name="movable">
+         <bool>true</bool>
+        </property>
+        <property name="tabBarAutoHide">
+         <bool>false</bool>
+        </property>
+        <widget class="QWidget" name="tab">
+         <attribute name="icon">
+          <iconset theme="text-html">
+           <normaloff>.</normaloff>.</iconset>
+         </attribute>
+         <attribute name="title">
+          <string>Tab 1</string>
+         </attribute>
+         <layout class="QHBoxLayout" name="horizontalLayout_3"/>
+        </widget>
+        <widget class="QWidget" name="tab_2">
+         <attribute name="title">
+          <string>Tab 2</string>
+         </attribute>
+         <layout class="QHBoxLayout" name="horizontalLayout_4"/>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>File</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="newBtn">
+          <property name="text">
+           <string>New</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="openBtn">
+          <property name="text">
+           <string>Open</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="saveBtn">
+          <property name="text">
+           <string>Save</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Compiler</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="selectBtn">
+          <item>
+           <property name="text">
+            <string>Java</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>C</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>C++</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Python</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="compileBtn">
+          <property name="text">
+           <string>Compile</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="executeBtn">
+          <property name="text">
+           <string>Execute</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Debug</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="errorLogBtn">
+          <property name="text">
+           <string>Error Log</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1019</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionOprn"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSave_as"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="actionCut"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionPest"/>
+    <addaction name="actionFont"/>
+   </widget>
+   <widget class="QMenu" name="menuRun">
+    <property name="title">
+     <string>Run</string>
+    </property>
+    <addaction name="actionCompile"/>
+    <addaction name="actionExecute"/>
+    <addaction name="actionDebug"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbou_Us"/>
+    <addaction name="actionContuct_Us"/>
+   </widget>
+   <widget class="QMenu" name="menuSetings">
+    <property name="title">
+     <string>System</string>
+    </property>
+    <addaction name="actionSystem_Font"/>
+    <addaction name="actionColoy"/>
+    <addaction name="actionSetings"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuRun"/>
+   <addaction name="menuHelp"/>
+   <addaction name="menuSetings"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionNew">
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="actionOprn">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionSave_as">
+   <property name="text">
+    <string>Save As</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="text">
+    <string>Undo</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="text">
+    <string>Redo</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="text">
+    <string>Cut</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="text">
+    <string>Copy</string>
+   </property>
+  </action>
+  <action name="actionPest">
+   <property name="text">
+    <string>Pest</string>
+   </property>
+  </action>
+  <action name="actionCompile">
+   <property name="text">
+    <string>Compile</string>
+   </property>
+  </action>
+  <action name="actionExecute">
+   <property name="text">
+    <string>Execute</string>
+   </property>
+  </action>
+  <action name="actionAbou_Us">
+   <property name="text">
+    <string>Abou Us</string>
+   </property>
+  </action>
+  <action name="actionSystem_Font">
+   <property name="text">
+    <string>System Font</string>
+   </property>
+  </action>
+  <action name="actionColoy">
+   <property name="text">
+    <string>Color</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionFont">
+   <property name="text">
+    <string>Font</string>
+   </property>
+  </action>
+  <action name="actionDebug">
+   <property name="text">
+    <string>Debug</string>
+   </property>
+  </action>
+  <action name="actionContuct_Us">
+   <property name="text">
+    <string>Contuct Us</string>
+   </property>
+  </action>
+  <action name="actionSetings">
+   <property name="text">
+    <string>Setings</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
