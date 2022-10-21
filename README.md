@@ -18,7 +18,6 @@ you can imagine this code will install this app
 ##### Run App
 go to " BasicCodeEdito" directory and run the run.sh scripts.
 ```
-cd BasicCodeEditor
 ./run.sh 
 ```
 
