@@ -2,7 +2,7 @@ from PySide6.QtWidgets import QWidget, QApplication, QMainWindow, QPlainTextEdit
 from compilerWin import Ui_compilerWin
 from dialog import Ui_Dialog
 from PySide6.QtCore import Slot
-from platform import system 
+from platform import platform, system 
 import sys
 import os
 import subprocess
@@ -177,8 +177,12 @@ class CodeEditor(QMainWindow):
                                 str(error.decode('utf-8')))
                     elif extension == 'c':
                         # os.system(f" {path} -o {name}.out ")
-                        error = subprocess.run(['gcc', path, '-o', name+'.out'],
-                                               stderr=subprocess.PIPE).stderr
+                        if (system() == 'Windows'):
+                            error = subprocess.run(['gcc', path, '-o', name+'.exe'],
+                                                stderr=subprocess.PIPE).stderr
+                        else:
+                            error = subprocess.run(['gcc', path, '-o', name+'.out'],
+                                                stderr=subprocess.PIPE).stderr
                         if error:
                             # print("Open Dialog Box to Show error")
                             self.errorLogWin.ui.label.setText(
@@ -210,7 +214,7 @@ class CodeEditor(QMainWindow):
                 path = self.openedFileList[currentFileIndex]
                 name, extension = os.path.splitext(path)
                 dir_name = os.path.dirname(path)
-                name = os.path.basename(name)                
+                absolute_name = os.path.basename(name)                
                 extension = extension[1:]
                 if system() == 'Windows':
                     if extension == lang_to_extension[lang]:
@@ -219,10 +223,10 @@ class CodeEditor(QMainWindow):
                             # subprocess.call(f'start /wait python {path}; read x', shell=True)
                         elif extension == 'java':
                             # subprocess.call(f'start /wait javac {path}; read x', shell=True)
-                            os.system(f'start powershell -Command "cd {dir_name};java {name};cat"')
+                            os.system(f'start powershell -Command "cd {dir_name};java {absolute_name};cat"')
                         elif extension == 'c' or extension == 'cpp':
                             # subprocess.call(f'start /wait  {path}; read x', shell=True)
-                            os.system(f'start powershell -Command "{path};cat"')
+                            os.system(f'start powershell -Command "{name}.exe;cat"')
 
                     else:
                         QMessageBox.information(

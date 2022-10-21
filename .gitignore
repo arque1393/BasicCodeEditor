@@ -1,2 +1,5 @@
 pyenv/
 __pycache__/
+.vscode/
+*.exe
+*.out
